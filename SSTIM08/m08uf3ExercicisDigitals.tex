@@ -1,10 +1,11 @@
 \documentclass[a4paper]{article}
 
-\usepackage[english]{babel}
+\usepackage[catalan]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{circuitikz}
 
 \title{Problemes de L\`ogica Combinacional}
 
@@ -16,24 +17,71 @@
 \maketitle
 
 \begin{abstract}
-Enter a short summary here. What topic do you want to investigate and why? What experiment did you perform? What were your main results and conclusion?
+Problemes de L\`ogica Combinacional corresponents a la tercera unitat formativa del m\`odul M08 Elements de sistemes de telecomunicacions.
 \end{abstract}
 
-\section{Introduction 5 lines to max 1/2 page}
+\section{Introducció}
+
+\subsection{Troba la funció resultant a partir dels següents circuits}
+
+\begin{circuitikz} \draw
+(0,2) node[and port] (myand) {}
+(2,1) node[or port] (myor) {}
+(myand.in 1) node[above left=.5cm](a) {A}
+(myand.in 2) node[below left = .5cm](b) {B}
+(myand.out) -| (myor.in 1)
+(a) -| (myand.in 1)
+(b) -| (myand.in 2)
+(b) node[below=1cm](c){C}
+(c) -| (myor.in 2);
+\end{circuitikz}
+
+\begin{circuitikz} \draw
+(0,2) node[or port] (myor) {}
+(2,1) node[or port] (myor) {}
+(myand.in 1) node[above left=.5cm](a) {A}
+(myand.in 2) node[below left = .5cm](b) {B}
+(myand.out) -| (myor.in 1)
+(a) -| (myand.in 1)
+(b) -| (myand.in 2)
+(b) node[below=1cm](c){C}
+(c) -| (myor.in 2);
+\end{circuitikz}
+
+\begin{circuitikz} \draw
+(0,2) node[and port] (myand) {}
+(2,1) node[or port] (myor) {}
+(myand.in 1) node[above left=.5cm](a) {A}
+(myand.in 2) node[below left = .5cm](b) {B}
+(myand.out) -| (myor.in 1)
+(a) -| (myand.in 1)
+(b) -| (myand.in 2)
+(b) node[below=1cm](c){C}
+(c) -| (myor.in 2);
+\end{circuitikz}
+
+\section{Lleis de De Morgan}
+Les lleis de De Morgan declaren que la suma de n variables globalment negades (o invertides) és igual al producte de les n variables negades individualment, i que inversament, el producte de n variables globalment negades és igual a la suma de les n variables negades individualment.
+
+Utilitza les Lleis de De Morgan per simplificar les següents funcions
+
+\subsection{Simplificació de funcions}
+
+
+\section{Karnaugh}
 \label{sec:introduction}
 
-Explain the context of the experiment here. Why is condensed matter physics interesting or important?
-Optional things you could talk about (but don't have to -- this is up to you): transistors, computers, Quantum computers, fundamental knowledge (e.g. the resistance quantum).
+Els mapes de Karnaug permeten trobar la funci\'o algebraica booleana partint de la taula de veritat.
 
-Briefly explain what methods you will use in the experiment, and what values you will extract from the data.
-
-For this section and all following sections: If you refer to an equation, previous result or theory that is not regarded as common knowledge, then cite the source (article or book) where you found this. For example, you can cite the Nano 3 Lecture notes \cite{nano3}.
-
-\section{Theory 2-3 pages}
-\label{sec:theory}
-
-\subsection{Two-dimensional Electron Gas}
-Here, explain the concept of a 2-DEG in GaAs/AlGaAs. What is a 2-DEG and why does it arise?
+\subsection{Display de 7 elements}
+Dissenya el circuit combinacional que faci funcionar un display digital de 7 segments.
+\begin{itemize}
+\item El display mostrar\`a els d\'igits del 0 al 9.
+\item L'entrada ser\`a binaria de 4 bits amb els valor en binari de 0 a 9.
+\item El circuit resultant tindr\`a 4 entrades i 7 sortides.
+\item Les entrades del 10 al 15 no es donaran mai. 
+\item Construeix el circuit amb el simulador LOGO! Soft Comfort.
+\end{itemize}
 
 \subsection{Hall Effect}
 Explain the classical Hall effect in your own words. What do I measure at $B=0$? And what happens if $B>0$? Which effect gives rise to the voltage drop in the vertical direction?
