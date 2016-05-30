@@ -60,13 +60,49 @@ Problemes de Lògica Combinacional corresponents a la tercera unitat formativa d
 (c) -| (myor.in 2);
 \end{circuitikz}
 
-\section{Lleis de De Morgan}
+\section{Funcions i Circuits}
+
+
+\subsection{Lleis de De Morgan}
 Les lleis de De Morgan declaren que la suma de n variables globalment negades (o invertides) és igual al producte de les n variables negades individualment, i que inversament, el producte de n variables globalment negades és igual a la suma de les n variables negades individualment.
 
 Utilitza les Lleis de De Morgan per simplificar les següents funcions
 
-\subsection{Simplificació de funcions}
+\subsection{Sumador i restador}
 
+Realitza un sumador de dos bits
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{ll|rr}
+x&y&C&S \\\hline
+0&0&0&0 \\
+0&1&0&1 \\
+1&0&0&1 \\
+1&1&1&0 \\
+
+\end{tabular}
+\caption{\label{tab:widgets}Taula Veritat Sumador de 2 bits.}
+\end{table}
+
+Realitza un sumador de tres bits
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{lll|rr}
+x&y&z&C&S \\\hline
+0&0&0&0&0 \\
+0&0&1&0&1 \\
+0&1&0&0&1 \\
+0&1&1&1&0 \\
+1&0&0&0&1 \\
+1&0&1&1&0 \\
+1&1&0&1&0 \\
+1&1&1&1&1 \\
+
+\end{tabular}
+\caption{\label{tab:widgets}Taula Veritat Sumador de 3 bits.}
+\end{table}
 
 \section{Karnaugh}
 \label{sec:introduction}
