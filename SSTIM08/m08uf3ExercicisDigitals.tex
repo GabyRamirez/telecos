@@ -7,6 +7,9 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{circuitikz}
 
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
 \title{Problemes de Lògica Combinacional}
 
 \author{Departament d' Electrònica}
@@ -103,6 +106,33 @@ x&y&z&C&S \\\hline
 \end{tabular}
 \caption{\label{tab:widgets}Taula Veritat Sumador de 3 bits.}
 \end{table}
+
+Realitza un sumador de n bits
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{lllllll}
+ &&0&1&0&0&0 \\
++&&1&1&1&0&1 \\\hline
+&1&0&1&1&0&1 \\
+
+\end{tabular}
+\caption{\label{tab:widgets}Exemple suma binaria}
+\end{table}
+
+\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
+\tikzstyle{init} = [pin edge={to-,thin,black}]
+
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+    \node [int, pin={[init]above:$A_{1}$}] (a) {Sum};
+    \node (b) [left of=a,node distance=2cm, coordinate] {a};
+    \node [int, pin={[init]above:$A_{0}$}] (c) [right of=a] {Sum};
+    \node [coordinate] (end) [right of=c, node distance=2cm]{};
+    \path[->] (a) edge node {$C$} (b);
+    \path[->] (c) edge node {$C$} (a);
+    \draw[->] (end) edge node {$C$} (c) ;
+    \draw[] (end) edge node {$C$} (c) ;
+\end{tikzpicture}
 
 \section{Karnaugh}
 \label{sec:introduction}
