@@ -7,9 +7,9 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{circuitikz}
 
-\title{Problemes de L\`ogica Combinacional}
+\title{Problemes de Lògica Combinacional}
 
-\author{Departament d' Electr\`onica}
+\author{Departament d' Electrònica}
 
 \date{\today}
 
@@ -17,7 +17,7 @@
 \maketitle
 
 \begin{abstract}
-Problemes de L\`ogica Combinacional corresponents a la tercera unitat formativa del m\`odul M08 Elements de sistemes de telecomunicacions.
+Problemes de Lògica Combinacional corresponents a la tercera unitat formativa del mòdul M08 Elements de sistemes de telecomunicacions.
 \end{abstract}
 
 \section{Introducció}
@@ -82,6 +82,26 @@ Dissenya el circuit combinacional que faci funcionar un display digital de 7 seg
 \item Les entrades del 10 al 15 no es donaran mai. 
 \item Construeix el circuit amb el simulador LOGO! Soft Comfort.
 \end{itemize}
+
+\section{Multiplexor i Demultiplexor}
+El Muliplexor permet incloure múltiples línes en una única. Permet per exemple codificar n entrades en una única sortida digital.
+
+\begin{description}
+\item[Exemple: MUX 4x1] Permet consultar l'estat de 4 entrades binaries seleccionant una amb una entrada de dos bits.
+\end{description}
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{l l l l|c c|r}
+I_{0} & I_{1} & I_{2} & I_{3} & S_{1} & S_{2} & S \\\hline
+1&0&0&0&0&0&I_{0} \\
+0&1&0&0&0&1&I_{1} \\
+0&0&1&0&1&0&I_{2} \\
+0&0&0&1&1&1&I_{3} \\
+
+\end{tabular}
+\caption{\label{tab:widgets}Taula Veritat MUX4x1.}
+\end{table}
 
 \subsection{Hall Effect}
 Explain the classical Hall effect in your own words. What do I measure at $B=0$? And what happens if $B>0$? Which effect gives rise to the voltage drop in the vertical direction?
